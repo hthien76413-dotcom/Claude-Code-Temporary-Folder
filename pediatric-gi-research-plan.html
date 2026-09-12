@@ -299,6 +299,50 @@
   }
   .legend span{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.04em}
 
+  /* ---------- deadline calendar ---------- */
+  .notice{
+    border:1px solid var(--crit);background:var(--surface);
+    padding:16px 20px;max-width:var(--prose);
+    display:flex;flex-direction:column;gap:7px;
+  }
+  .notice .n-tag{
+    font-family:var(--font-mono);font-size:10.5px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--crit);
+  }
+  .notice p{margin:0;color:var(--ink-2);font-size:13.5px;line-height:1.65}
+  .notice p b{color:var(--ink);font-weight:500}
+
+  .status{
+    display:inline-block;font-family:var(--font-mono);font-size:10px;
+    letter-spacing:.08em;padding:3px 7px;white-space:nowrap;border-radius:2px;
+  }
+  .status.now{background:var(--crit);color:var(--surface);font-weight:500}
+  .status.soon{border:1px solid var(--warn);color:var(--warn)}
+  .status.shut{border:1px solid var(--rule);color:var(--ink-3)}
+  .status.open{border:1px solid var(--good);color:var(--good)}
+  tr.urgent td:first-child{box-shadow:inset 3px 0 0 var(--crit)}
+
+  .runway{min-width:680px;padding:16px 18px 12px}
+  .runway-scale{
+    display:grid;grid-template-columns:150px repeat(7,1fr);
+    border-bottom:1px solid var(--rule);padding-bottom:6px;
+  }
+  .runway-scale span{
+    font-family:var(--font-mono);font-size:10px;color:var(--ink-3);text-align:center;
+  }
+  .runway-scale span:first-child{text-align:left}
+  .runway-row{
+    display:grid;grid-template-columns:150px repeat(7,1fr);
+    align-items:center;height:34px;border-bottom:1px solid var(--rule-2);
+  }
+  .runway-row:last-of-type{border-bottom:0}
+  .runway-row .lbl{
+    grid-column:1;font-size:12.5px;color:var(--ink-2);
+    padding-right:14px;line-height:1.3;
+  }
+  .bar.due{background:var(--crit)}
+  .bar.due span{color:var(--surface)}
+
   /* ---------- plan B panel ---------- */
   .panel{
     background:var(--surface-2);border-top:2px solid var(--dab);
@@ -365,7 +409,8 @@
       本页先给出选题的筛选逻辑与十个候选方向的横向比较，再把首推方向
       ——<em>先天性巨结肠术后肠炎（HAEC）的多组学机制与风险预测</em>——
       展开成含科学假设、三个研究内容、样本量估算、36 个月进度、经费预算与风险对策的完整方案；
-      另附一份 12–18 个月即可产出的低成本备选方案，以及下个月的落地清单。
+      另附一份 12–18 个月即可产出的低成本备选方案、一份按省份核过的<em>申报窗口日历</em>，
+      以及下个月的落地清单。
     </p>
     <dl class="coversheet">
       <div><dt>适用层次</dt><dd>国自然青年 / 面上<br>省市级重点</dd></div>
@@ -373,6 +418,7 @@
       <div><dt>直接费用</dt><dd class="mono">约 55 万元</dd></div>
       <div><dt>核心结构</dt><dd>临床队列 + 生物样本库<br>+ 一个机制切入点</dd></div>
       <div><dt>预期产出</dt><dd>SCI 2–3 篇 · 预测工具 1 项<br>专病队列 1 个</dd></div>
+      <div><dt>下一主窗口</dt><dd>国自然 2027 面上<br><span class="mono">约 2027-03-20 截止</span></dd></div>
     </dl>
   </header>
 
@@ -979,13 +1025,187 @@
     </div>
   </section>
 
-  <!-- ============ 10 落地清单 ============ -->
+  <!-- ============ 10 申报日历 ============ -->
   <section class="stage">
     <div class="num">10</div>
     <div class="body">
+      <h2>申报窗口与冲刺日历</h2>
+
+      <div class="notice">
+        <div class="n-tag">核对状态 · 信息截至 2026-09-12</div>
+        <p>
+          下表日期来自公开渠道检索，<b>未逐条打开官网原文核对</b>。省级通知常有单位内部提前截止、
+          名额限制与"申报数量达标即关闭"等附加规则，且各省节奏差异极大
+          —— 海南在 2026 年 3 月就受理 2027 年度，湖北要等到 10 月。
+          <b>任何一条在行动前都请以本院科研处／科教科的正式通知为准</b>，
+          尤其是已进入倒计时的河南窗口。
+        </p>
+      </div>
+
+      <div class="subhead">华中 / 华南六省 · 2027 年度省级基金窗口</div>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>省</th><th>项目</th><th>窗口</th><th>状态</th></tr>
+          </thead>
+          <tbody>
+            <tr class="urgent">
+              <td><b>河南</b></td>
+              <td>2027 年度省科技攻关项目<br><span class="q">年龄 ≤ 60 周岁；有省财政在研未结题项目不得申报</span></td>
+              <td class="num">申报 2026-09-14 18:00<br>推荐单位 09-15 18:00</td>
+              <td><span class="status now">倒计时 2 天</span></td>
+            </tr>
+            <tr>
+              <td><b>湖北</b></td>
+              <td>2027 年度省自然科学基金<br><span class="q">设面上项目类别，适合高级职称申报</span></td>
+              <td class="num">尚未发布<br>上一轮：2025-09-30 发通知<br>2025-10-30 12:00 截止</td>
+              <td><span class="status soon">预计本月底开放</span></td>
+            </tr>
+            <tr>
+              <td><b>广西</b></td>
+              <td>2027 年广西科技计划项目<br><span class="q">指南分多版发布，已见第 3 版</span></td>
+              <td class="num">第一版 2026-08-15 18:00<br>推荐 08-19 18:00</td>
+              <td><span class="status open">仍可能有新批次</span></td>
+            </tr>
+            <tr>
+              <td>湖南</td>
+              <td>2027 年度省自然科学基金</td>
+              <td class="num">填报 2026-09-10 16:00<br>推荐 09-16 16:00</td>
+              <td><span class="status shut">已截止</span></td>
+            </tr>
+            <tr>
+              <td>广东</td>
+              <td>2027 年度基础与应用基础研究基金（省自然科学基金）</td>
+              <td class="num">2026-05-15 起<br>06-10 截止</td>
+              <td><span class="status shut">已截止</span></td>
+            </tr>
+            <tr>
+              <td>海南</td>
+              <td>2027 年省自然科学基金<br><span class="q">面上 8 万，实施期 ≤ 3 年</span></td>
+              <td class="num">2026-05-14 17:00</td>
+              <td><span class="status shut">已截止</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subhead">国家级与社会基金</div>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>来源</th><th>项目</th><th>时间</th><th>与本方案的关系</th></tr>
+          </thead>
+          <tbody>
+            <tr class="pick">
+              <td>国家自然科学基金委</td>
+              <td><b>2027 年度面上项目</b></td>
+              <td class="num">指南约 2027-01 公布<br>集中接收约 2027-03-01 起<br>03-20 16:00 截止</td>
+              <td><b>本页方案的主目标。</b>2026 年度为 3/1–3/20；按规定年度指南须在接收起始日前 30 日公布，故 2027 年度节奏应大体相同</td>
+            </tr>
+            <tr>
+              <td>科技部 / 国家卫健委</td>
+              <td>国家重点研发计划 · 科技重大专项</td>
+              <td class="num">2027 年度指南征求意见<br>已于 2026-05 / 06 完成</td>
+              <td>正式指南随后发布且窗口很短。小儿外科单中心体量适合<b>作为参与单位</b>，不宜牵头</td>
+            </tr>
+            <tr>
+              <td>中国出生缺陷干预救助基金会</td>
+              <td>专项研究项目</td>
+              <td class="num">2026 批次 05-29 截止<br>8–10 项 / 30–60 万 / ≤ 3 年</td>
+              <td><b>与本专业最对口</b>：先天性结构畸形范围涵盖 HSCR、肛门直肠畸形、胆道闭锁。明年指南一出即可报</td>
+            </tr>
+            <tr>
+              <td>吴阶平医学基金会</td>
+              <td>各科研专项（滚动发布）</td>
+              <td class="num">2026 批次 07-31 截止<br>注明"数量达标提前关闭"</td>
+              <td>额度与方向随专项变化，需常年盯其【科研专项】栏，早动手</td>
+            </tr>
+            <tr>
+              <td>中国医学基金会</td>
+              <td>临床医学科研促进计划</td>
+              <td class="num">2026 已截止<br>分批评审，第三批 07-08 公示</td>
+              <td>2027 批次通常年初启动，适合<b>方案 B</b> 那类低成本临床课题</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subhead">冲刺国自然 2027 面上 · 七个月跑道</div>
+      <p>
+        这是本页最关键的一张表。现在到明年 3 月有六个多月，<strong>足够把方案从"设想"变成"带预实验数据的标书"</strong>
+        —— 伦理批复、回顾队列实测例数、20 例预提取的缺失率、10–15 例菌群预试，
+        这四样写进立项依据，和只有研究设计的标书不是一个量级。
+      </p>
+      <div class="gantt-wrap">
+        <div class="runway">
+          <div class="runway-scale">
+            <span>月份</span>
+            <span>26-09</span><span>10</span><span>11</span><span>12</span>
+            <span>27-01</span><span>02</span><span>03</span>
+          </div>
+
+          <div class="runway-row">
+            <div class="lbl">河南省科技攻关 · 截止</div>
+            <div class="bar due" style="grid-column:2 / span 1"><span>9/14</span></div>
+          </div>
+          <div class="runway-row">
+            <div class="lbl">湖北省自然科学基金 · 窗口</div>
+            <div class="bar out" style="grid-column:3 / span 2"><span>待通知</span></div>
+          </div>
+          <div class="runway-row">
+            <div class="lbl">伦理审批与 CRF 定稿</div>
+            <div class="bar prep" style="grid-column:2 / span 2"><span>9–10 月</span></div>
+          </div>
+          <div class="runway-row">
+            <div class="lbl">回顾队列提取 · 20 例预提取</div>
+            <div class="bar clin" style="grid-column:2 / span 3"><span>9–11 月 · 实测可用例数</span></div>
+          </div>
+          <div class="runway-row">
+            <div class="lbl">协作单位与测序公司落实</div>
+            <div class="bar prep" style="grid-column:3 / span 2"><span>10–11 月</span></div>
+          </div>
+          <div class="runway-row">
+            <div class="lbl">预实验：菌群预试 10–15 例</div>
+            <div class="bar omic" style="grid-column:4 / span 3"><span>11 月–1 月 · 出预实验图</span></div>
+          </div>
+          <div class="runway-row">
+            <div class="lbl">标书撰写与单位内审</div>
+            <div class="bar clin" style="grid-column:6 / span 3"><span>1–3 月</span></div>
+          </div>
+          <div class="runway-row">
+            <div class="lbl">国自然 2027 集中接收 · 截止</div>
+            <div class="bar due" style="grid-column:8 / span 1"><span>约 3/20</span></div>
+          </div>
+
+          <div class="legend">
+            <span><i style="background:var(--crit)"></i>申报截止节点</span>
+            <span><i style="border:1px dashed var(--ink-3);background:transparent"></i>窗口待通知</span>
+            <span><i style="background:var(--ink-3)"></i>筹备与合规</span>
+            <span><i style="background:var(--hema)"></i>临床数据与标书</span>
+            <span><i style="background:var(--dab)"></i>预实验</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subhead">两条线并行的打法</div>
+      <p>
+        <strong>主线是国自然 2027 面上</strong>，全部准备工作按上面的跑道倒排，这也是本页 55 万／36 个月方案的目标额度。
+        <strong>副线是省级</strong>：在河南就立刻确认 9/14 还来不来得及；在湖北就盯本月底的通知；
+        在广西留意后续版本指南；在湖南、广东、海南本年度已过，就把省级预算改由
+        <strong>省卫健委课题、省医学会课题或院级课题</strong>过渡，同时用方案 B 那套低成本队列先把随访体系和第一篇论文做出来
+        —— 它既是明年省基金的申报基础，也是国自然标书里的前期工作。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 11 落地清单 ============ -->
+  <section class="stage">
+    <div class="num">11</div>
+    <div class="body">
       <h2>下个月的落地清单</h2>
       <p>
-        方案写得再完整，卡住的往往是前三件事。按顺序做，勾选状态保存在本机浏览器。
+        方案写得再完整，卡住的往往是前三件事。按顺序做 —— 前三项直接决定
+        <strong>明年 3 月的标书里能不能写出真实例数与预实验结果</strong>。勾选状态保存在本机浏览器。
       </p>
       <ul class="check">
         <li>
@@ -1028,9 +1248,9 @@
     </div>
   </section>
 
-  <!-- ============ 11 踩坑 ============ -->
+  <!-- ============ 12 踩坑 ============ -->
   <section class="stage">
-    <div class="num">11</div>
+    <div class="num">12</div>
     <div class="body">
       <h2>常见踩坑</h2>
       <ul class="pit">
