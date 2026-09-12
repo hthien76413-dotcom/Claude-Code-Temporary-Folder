@@ -1,0 +1,1093 @@
+<title>小儿胃肠外科课题规划</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#F3F3F7;
+    --surface:#FFFFFF;
+    --surface-2:#EAEAF1;
+    --ink:#1C1E2B;
+    --ink-2:#4A4D63;
+    --ink-3:#787B92;
+    --rule:#D4D4E0;
+    --rule-2:#E5E5EE;
+    --hema:#414C93;
+    --hema-soft:#E4E7F4;
+    --dab:#8F5524;
+    --dab-soft:#F1E6DA;
+    --good:#2F6F52;
+    --warn:#8E6210;
+    --crit:#9C382F;
+
+    --font-display:"Noto Serif SC","Songti SC",SimSun,Georgia,serif;
+    --font-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+    --prose:72ch;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#13141B;
+      --surface:#1B1D26;
+      --surface-2:#232631;
+      --ink:#E9E9F1;
+      --ink-2:#B4B7C7;
+      --ink-3:#8A8DA0;
+      --rule:#343745;
+      --rule-2:#272A34;
+      --hema:#97A1E2;
+      --hema-soft:#232743;
+      --dab:#D0935F;
+      --dab-soft:#33261B;
+      --good:#74B793;
+      --warn:#D3A348;
+      --crit:#E08578;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#13141B;
+    --surface:#1B1D26;
+    --surface-2:#232631;
+    --ink:#E9E9F1;
+    --ink-2:#B4B7C7;
+    --ink-3:#8A8DA0;
+    --rule:#343745;
+    --rule-2:#272A34;
+    --hema:#97A1E2;
+    --hema-soft:#232743;
+    --dab:#D0935F;
+    --dab-soft:#33261B;
+    --good:#74B793;
+    --warn:#D3A348;
+    --crit:#E08578;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-weight:400;
+    font-size:15px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:20px;
+    padding-block:0;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding-block:0 96px}
+  p,li{color:var(--ink-2)}
+  strong{color:var(--ink);font-weight:500}
+  a{color:var(--hema)}
+  :focus-visible{outline:2px solid var(--hema);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+  .eyebrow{
+    font-family:var(--font-mono);font-size:11px;font-weight:500;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--dab);
+  }
+
+  /* ---------- masthead: grant cover sheet ---------- */
+  header.cover{
+    border-bottom:2px solid var(--ink);
+    padding-block:56px 0;
+    display:flex;flex-direction:column;gap:22px;
+  }
+  header.cover h1{
+    font-family:var(--font-display);font-weight:700;
+    font-size:clamp(30px,5.4vw,50px);line-height:1.18;letter-spacing:-.01em;
+    margin:0;color:var(--ink);text-wrap:balance;
+  }
+  .lede{
+    font-size:clamp(15px,1.6vw,17px);line-height:1.7;
+    max-width:var(--prose);margin:0;color:var(--ink-2);
+  }
+  .lede em{color:var(--dab);font-style:normal;font-weight:500}
+  .coversheet{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:1px;background:var(--rule);
+    border:1px solid var(--rule);margin-bottom:-1px;
+  }
+  .coversheet div{background:var(--ground);padding:14px 16px}
+  .coversheet dt{
+    font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--ink-3);margin:0 0 4px;
+  }
+  .coversheet dd{margin:0;font-size:14px;color:var(--ink);font-weight:500;line-height:1.45}
+
+  /* ---------- numbered stages ---------- */
+  section.stage{
+    display:grid;grid-template-columns:60px minmax(0,1fr);
+    gap:0 24px;padding-block:52px;border-bottom:1px solid var(--rule-2);
+  }
+  section.stage > .num{
+    font-family:var(--font-mono);font-size:13px;font-weight:500;
+    color:var(--hema);padding-top:6px;letter-spacing:.04em;
+  }
+  section.stage > .body{min-width:0;display:flex;flex-direction:column;gap:20px}
+  h2{
+    font-family:var(--font-display);font-weight:700;
+    font-size:clamp(21px,2.7vw,27px);line-height:1.35;margin:0;
+    color:var(--ink);text-wrap:balance;
+  }
+  h3{
+    font-family:var(--font-display);font-weight:500;font-size:17px;
+    line-height:1.45;margin:0;color:var(--ink);
+  }
+  .body > p{max-width:var(--prose);margin:0}
+  .subhead{
+    font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-3);
+    border-top:1px solid var(--rule);padding-top:10px;
+  }
+  @media (max-width:640px){
+    section.stage{grid-template-columns:minmax(0,1fr);gap:10px}
+    section.stage > .num{padding-top:0}
+  }
+
+  /* ---------- sieve list (选题四个筛子) ---------- */
+  ol.sieve{
+    list-style:none;margin:0;padding:0;max-width:var(--prose);
+    display:flex;flex-direction:column;gap:16px;
+    counter-reset:sieve;
+  }
+  ol.sieve li{
+    counter-increment:sieve;padding-left:38px;position:relative;
+  }
+  ol.sieve li::before{
+    content:"筛 " counter(sieve);
+    position:absolute;left:0;top:3px;
+    font-family:var(--font-mono);font-size:10.5px;letter-spacing:.04em;
+    color:var(--dab);white-space:nowrap;
+  }
+  ol.sieve b{display:block;color:var(--ink);font-weight:500}
+
+  .pull{
+    border-left:3px solid var(--dab);background:var(--dab-soft);
+    padding:16px 20px;max-width:var(--prose);
+  }
+  .pull p{margin:0;color:var(--ink)}
+
+  /* ---------- tables ---------- */
+  .scroller{overflow-x:auto;border:1px solid var(--rule);background:var(--surface)}
+  table{border-collapse:collapse;width:100%;font-size:13.5px}
+  caption{
+    text-align:left;font-family:var(--font-mono);font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+    padding:0 0 8px;
+  }
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+  thead th{
+    font-family:var(--font-mono);font-size:10.5px;font-weight:500;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+    background:var(--surface-2);border-bottom:1px solid var(--rule);white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:0}
+  td.num,th.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .topic{color:var(--ink);font-weight:500;display:block;margin-bottom:3px}
+  .q{font-size:12.5px;color:var(--ink-3);line-height:1.55;display:block;max-width:34ch}
+  tr.pick{background:var(--hema-soft)}
+  tr.pick td:first-child{box-shadow:inset 3px 0 0 var(--hema)}
+  .chip{
+    display:inline-block;font-family:var(--font-mono);font-size:9.5px;
+    letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;
+    border:1px solid var(--hema);color:var(--hema);margin-left:6px;
+    vertical-align:2px;white-space:nowrap;
+  }
+  .cost-低{color:var(--good)}
+  .cost-中{color:var(--warn)}
+  .cost-高{color:var(--crit)}
+  td.cost{font-family:var(--font-mono);font-size:12px;white-space:nowrap}
+
+  .dots{display:inline-flex;gap:3px;align-items:center}
+  .dots i{
+    width:7px;height:7px;border-radius:50%;
+    border:1px solid var(--ink-3);display:block;
+  }
+  .dots i.on{background:var(--hema);border-color:var(--hema)}
+
+  table.figures td:first-child{color:var(--ink-2)}
+  table.figures td:last-child{color:var(--ink);font-weight:500}
+  tfoot td{
+    border-top:2px solid var(--ink);border-bottom:0;
+    color:var(--ink);font-weight:500;background:var(--surface-2);
+  }
+
+  /* ---------- aims ---------- */
+  .aims{display:flex;flex-direction:column;gap:2px}
+  .aim{
+    border-left:3px solid var(--hema);background:var(--surface);
+    padding:20px 22px;display:flex;flex-direction:column;gap:12px;
+  }
+  .aim:nth-child(2){border-left-color:var(--dab)}
+  .aim:nth-child(3){border-left-color:var(--good)}
+  .aim-head{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+  .aim-head .tag{
+    font-family:var(--font-mono);font-size:10.5px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--hema);
+  }
+  .aim:nth-child(2) .aim-head .tag{color:var(--dab)}
+  .aim:nth-child(3) .aim-head .tag{color:var(--good)}
+  .aim dl{margin:0;display:grid;grid-template-columns:88px minmax(0,1fr);gap:9px 16px;font-size:13.5px}
+  .aim dt{
+    font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;
+    color:var(--ink-3);text-transform:uppercase;padding-top:4px;
+  }
+  .aim dd{margin:0;color:var(--ink-2);line-height:1.65}
+  .aim dd b{color:var(--ink);font-weight:500}
+  @media (max-width:560px){
+    .aim dl{grid-template-columns:minmax(0,1fr);gap:2px 0}
+    .aim dd{margin-bottom:8px}
+  }
+
+  .titlecard{
+    border:1px solid var(--ink);background:var(--surface);padding:22px 24px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .titlecard .t{
+    font-family:var(--font-display);font-weight:700;font-size:clamp(18px,2.4vw,23px);
+    line-height:1.45;color:var(--ink);text-wrap:balance;
+  }
+  .titlecard .h{margin:0;color:var(--ink-2);font-size:14px;border-top:1px solid var(--rule);padding-top:10px}
+  .titlecard .h b{color:var(--dab);font-weight:500}
+
+  /* ---------- gantt ---------- */
+  .gantt-wrap{overflow-x:auto;border:1px solid var(--rule);background:var(--surface)}
+  .gantt{min-width:760px;padding:16px 18px 10px}
+  .gantt-scale{
+    display:grid;grid-template-columns:170px repeat(36,1fr);
+    align-items:end;border-bottom:1px solid var(--rule);padding-bottom:6px;
+  }
+  .gantt-scale span{
+    font-family:var(--font-mono);font-size:10px;color:var(--ink-3);
+    grid-row:1;letter-spacing:.02em;
+  }
+  .gantt-row{
+    display:grid;grid-template-columns:170px repeat(36,1fr);
+    align-items:center;height:34px;border-bottom:1px solid var(--rule-2);
+  }
+  .gantt-row:last-child{border-bottom:0}
+  .gantt-row .lbl{
+    grid-column:1;font-size:12.5px;color:var(--ink-2);padding-right:14px;
+    line-height:1.3;
+  }
+  .bar{
+    height:15px;border-radius:2px;position:relative;
+    display:flex;align-items:center;padding-inline:6px;
+  }
+  .bar span{
+    font-family:var(--font-mono);font-size:9.5px;color:#FFFFFF;
+    white-space:nowrap;letter-spacing:.04em;
+  }
+  .bar.prep{background:var(--ink-3)}
+  .bar.clin{background:var(--hema)}
+  .bar.omic{background:var(--dab)}
+  .bar.anim{background:var(--good)}
+  .bar.out{background:transparent;border:1px dashed var(--ink-3)}
+  .bar.out span{color:var(--ink-2)}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .bar span{color:#14151C}
+    :root:not([data-theme="light"]) .bar.out span{color:var(--ink-2)}
+  }
+  :root[data-theme="dark"] .bar span{color:#14151C}
+  :root[data-theme="dark"] .bar.out span{color:var(--ink-2)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 18px;padding-top:4px}
+  .legend i{
+    display:inline-block;width:20px;height:8px;border-radius:2px;margin-right:7px;
+    vertical-align:1px;
+  }
+  .legend span{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.04em}
+
+  /* ---------- plan B panel ---------- */
+  .panel{
+    background:var(--surface-2);border-top:2px solid var(--dab);
+    padding:24px;display:flex;flex-direction:column;gap:16px;
+  }
+  .panel dl{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:9px 16px;font-size:13.5px}
+  .panel dt{
+    font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-3);padding-top:4px;
+  }
+  .panel dd{margin:0;color:var(--ink-2);line-height:1.65}
+  .panel dd b{color:var(--ink);font-weight:500}
+  @media (max-width:560px){
+    .panel dl{grid-template-columns:minmax(0,1fr);gap:2px 0}
+    .panel dd{margin-bottom:8px}
+  }
+
+  /* ---------- checklist ---------- */
+  ul.check{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;max-width:var(--prose)}
+  ul.check li{background:var(--surface);display:flex;gap:12px;padding:12px 14px;align-items:flex-start}
+  ul.check input{
+    appearance:none;-webkit-appearance:none;width:16px;height:16px;flex:0 0 auto;
+    border:1.5px solid var(--ink-3);background:var(--surface);margin:4px 0 0;
+    cursor:pointer;border-radius:2px;position:relative;
+  }
+  ul.check input:checked{background:var(--hema);border-color:var(--hema)}
+  ul.check input:checked::after{
+    content:"";position:absolute;left:4px;top:1px;width:5px;height:9px;
+    border:solid var(--surface);border-width:0 1.5px 1.5px 0;transform:rotate(42deg);
+  }
+  ul.check label{font-size:13.5px;color:var(--ink-2);line-height:1.6;cursor:pointer}
+  ul.check input:checked + label{color:var(--ink-3);text-decoration:line-through}
+  ul.check label b{color:var(--ink);font-weight:500}
+  ul.check input:checked + label b{color:var(--ink-3)}
+
+  /* ---------- pitfalls ---------- */
+  ul.pit{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;max-width:var(--prose)}
+  ul.pit li{
+    display:grid;grid-template-columns:minmax(0,1fr);gap:2px;
+    padding:14px 0;border-bottom:1px solid var(--rule-2);
+  }
+  ul.pit li:last-child{border-bottom:0}
+  ul.pit .bad{color:var(--crit);font-size:13.5px}
+  ul.pit .fix{color:var(--ink-2);font-size:13.5px;padding-left:20px;position:relative}
+  ul.pit .fix::before{
+    content:"→";position:absolute;left:0;color:var(--good);font-family:var(--font-mono);
+  }
+
+  footer.end{
+    padding-top:36px;font-size:12.5px;color:var(--ink-3);
+    max-width:var(--prose);
+  }
+  footer.end p{margin:0 0 8px;color:var(--ink-3)}
+</style>
+
+<div class="wrap">
+
+  <header class="cover">
+    <div>
+      <div class="eyebrow">课题规划 · 小儿胃肠外科</div>
+      <h1>从十个候选方向，到一份能写进标书的三年方案</h1>
+    </div>
+    <p class="lede">
+      本页先给出选题的筛选逻辑与十个候选方向的横向比较，再把首推方向
+      ——<em>先天性巨结肠术后肠炎（HAEC）的多组学机制与风险预测</em>——
+      展开成含科学假设、三个研究内容、样本量估算、36 个月进度、经费预算与风险对策的完整方案；
+      另附一份 12–18 个月即可产出的低成本备选方案，以及下个月的落地清单。
+    </p>
+    <dl class="coversheet">
+      <div><dt>适用层次</dt><dd>国自然青年 / 面上<br>省市级重点</dd></div>
+      <div><dt>研究周期</dt><dd class="mono">36 个月</dd></div>
+      <div><dt>直接费用</dt><dd class="mono">约 55 万元</dd></div>
+      <div><dt>核心结构</dt><dd>临床队列 + 生物样本库<br>+ 一个机制切入点</dd></div>
+      <div><dt>预期产出</dt><dd>SCI 2–3 篇 · 预测工具 1 项<br>专病队列 1 个</dd></div>
+    </dl>
+  </header>
+
+  <!-- ============ 01 选题逻辑 ============ -->
+  <section class="stage">
+    <div class="num">01</div>
+    <div class="body">
+      <h2>先定选题逻辑，再谈选什么</h2>
+      <p>
+        小儿外科单中心做课题，最大的约束不是想法而是病例量和平台。所以选题不是"挑一个热点"，
+        而是让四个筛子依次过一遍，能同时通过的方向通常只剩两三个。
+      </p>
+      <ol class="sieve">
+        <li>
+          <b>病例量 — 这一条决定课题成不成立</b>
+          先把近 5 年出院诊断导出来，年手术量 ≥20 例的病种才适合做单中心前瞻队列；
+          10–20 例之间只能做回顾性研究或牵头多中心；低于 10 例的方向，只能走基础实验路线。
+        </li>
+        <li>
+          <b>临床真问题 — 你反复解释不清的那件事</b>
+          查房时不确定该不该再扩张、门诊时无法回答家长"以后能不能控制大便"、
+          再入院时说不清为什么偏偏是这个孩子得肠炎 —— 这些才是评审认可的"临床需求"。
+        </li>
+        <li>
+          <b>结局可测量 — 用量表，不用形容词</b>
+          终点必须落在公认工具上：HAEC 用 2009 Delphi 共识评分，排便功能用 Rintala BFS
+          与 Krickenbeck 分类，生活质量用 PedsQL 4.0。写"恢复良好 / 较差"的标书基本出不来。
+        </li>
+        <li>
+          <b>机制可落地 — 在你真能拿到的平台上做</b>
+          菌群、代谢组、病理免疫组化可外送或院内解决；单细胞、空间转录组、无菌鼠必须先落实合作实验室，
+          否则技术路线写得再漂亮也是空的。
+        </li>
+      </ol>
+      <div class="pull">
+        <p>
+          目前小儿外科最稳的课题结构是三件套：<strong>一个专病临床队列 + 一个带时序样本的生物样本库 + 一个机制切入点</strong>。
+          队列保证能出临床文章，样本库让一次入组支撑多个衍生课题，机制切入点负责让基金评审给分。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 候选方向 ============ -->
+  <section class="stage">
+    <div class="num">02</div>
+    <div class="body">
+      <h2>十个候选方向的横向比较</h2>
+      <p>
+        评分为三级（●●● 最高）。"成本"指直接费用与平台依赖程度，
+        低成本方向几乎只消耗人力，适合作为第一个课题或研究生课题先跑通流程。
+      </p>
+      <div class="scroller">
+        <table>
+          <caption>候选方向筛选表 · 按推荐度排序</caption>
+          <thead>
+            <tr>
+              <th>方向与核心科学问题</th>
+              <th>研究类型</th>
+              <th class="num">临床价值</th>
+              <th class="num">创新性</th>
+              <th class="num">可行性</th>
+              <th>成本</th>
+              <th>适合层次</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pick">
+              <td>
+                <span class="topic">HSCR 术后肠炎的菌群–SCFA–免疫轴<span class="chip">首推</span></span>
+                <span class="q">产丁酸菌减少是否通过丁酸不足削弱黏膜屏障与 Treg 应答，从而在术后菌群重塑期触发 HAEC？能否据此提前预警？</span>
+              </td>
+              <td>回顾+前瞻队列<br>+多组学+动物</td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td class="cost"><span class="cost-中">中高</span></td>
+              <td>国自然青年/面上</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="topic">NEC 手术时机的动态预警</span>
+                <span class="q">肠道超声评分联合血清 I-FABP、粪钙卫蛋白能否比临床经验更早识别需手术的患儿？</span>
+              </td>
+              <td>前瞻诊断准确性研究</td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td class="cost"><span class="cost-中">中</span></td>
+              <td>省市级 / 国自然青年</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="topic">ARM 远期排便功能与生活质量<span class="chip">方案 B</span></span>
+                <span class="q">哪些可改变的因素（术式、手术年龄、是否进入规范化肠管理）真正决定学龄期控便结局？</span>
+              </td>
+              <td>回顾队列+横断面随访</td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td><span class="dots" aria-label="1 分，满分 3"><i class="on"></i><i></i><i></i></span></td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td class="cost"><span class="cost-低">低</span></td>
+              <td>院级 / 省市级</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="topic">肠套叠复发风险预测</span>
+                <span class="q">初诊超声特征加临床变量能否预测水压复位后的早期复发，指导观察时长？</span>
+              </td>
+              <td>回顾队列+机器学习</td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td><span class="dots" aria-label="1 分，满分 3"><i class="on"></i><i></i><i></i></span></td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td class="cost"><span class="cost-低">低</span></td>
+              <td>院级（最快出文章）</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="topic">小儿胃肠手术 ERAS 方案</span>
+                <span class="q">在低龄患儿中，缩短禁食、免置胃管、早期喂养的组合是否安全且能缩短住院日？</span>
+              </td>
+              <td>前后对照 / 阶梯楔形试验</td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td><span class="dots" aria-label="1 分，满分 3"><i class="on"></i><i></i><i></i></span></td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td class="cost"><span class="cost-低">低</span></td>
+              <td>院级质控 + 省市级</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="topic">食管闭锁术后吻合口狭窄</span>
+                <span class="q">吻合张力、GER 程度能否预测需反复扩张的狭窄？预防性扩张是否优于按需扩张？</span>
+              </td>
+              <td>回顾建模 + 小样本 RCT</td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td class="cost"><span class="cost-中">中</span></td>
+              <td>省市级 / 国自然青年</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="topic">短肠综合征肠康复路径</span>
+                <span class="q">GLP-2 类似物与肠康复方案下，肠适应过程伴随怎样的菌群与胆汁酸代谢变化？</span>
+              </td>
+              <td>小样本前瞻队列</td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td><span class="dots" aria-label="1 分，满分 3"><i class="on"></i><i></i><i></i></span></td>
+              <td class="cost"><span class="cost-中">中</span></td>
+              <td>省市级（病例量是瓶颈）</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="topic">胆道闭锁 Kasai 术后自体肝生存</span>
+                <span class="q">血清 MMP-7 联合肝硬度、术中所见能否构建优于现有指标的自体肝生存预测模型？</span>
+              </td>
+              <td>回顾队列 + 前瞻验证</td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td class="cost"><span class="cost-中">中</span></td>
+              <td>国自然青年 / 省市级</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="topic">HSCR 过渡区空间转录组</span>
+                <span class="q">过渡区的细胞组成与神经–胶质–免疫微环境，能否解释切除范围不足导致的再手术？</span>
+              </td>
+              <td>基础为主（标本驱动）</td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td><span class="dots" aria-label="3 分，满分 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></td>
+              <td><span class="dots" aria-label="1 分，满分 3"><i class="on"></i><i></i><i></i></span></td>
+              <td class="cost"><span class="cost-高">高</span></td>
+              <td>国自然面上（需合作平台）</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="topic">婴幼儿术后喂养不耐受与菌群</span>
+                <span class="q">术前菌群构成能否预测胃肠手术后喂养不耐受，指导肠内营养启动策略？</span>
+              </td>
+              <td>前瞻队列</td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td><span class="dots" aria-label="2 分，满分 3"><i class="on"></i><i class="on"></i><i></i></span></td>
+              <td class="cost"><span class="cost-中">中</span></td>
+              <td>省市级</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subhead">为什么首推第一个方向</div>
+      <p>
+        一是病例集中：HSCR 是小儿胃肠外科最稳定的病种来源，一个中心的历史病例足以支撑回顾建模；
+        二是临床痛点明确：HAEC 是术后再入院与死亡的首位原因，现行 Delphi 评分是事后诊断，临床缺的是预警；
+        三是机制层次完整：菌群→代谢物→免疫→表型，能写出真正的因果链而不是相关性；
+        四是可衍生：同一套队列和样本库还能长出排便功能、过渡区病理、喂养不耐受等后续课题。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 03 主攻方案 ============ -->
+  <section class="stage">
+    <div class="num">03</div>
+    <div class="body">
+      <h2>主攻方案：立项依据与科学假设</h2>
+      <div class="titlecard">
+        <div class="t">肠道菌群—短链脂肪酸—黏膜免疫轴在先天性巨结肠术后肠炎中的作用机制及风险预测模型构建</div>
+        <p class="h">
+          <b>科学假设：</b>HAEC 易感个体在术前及术后早期即存在产丁酸菌（Faecalibacterium、Roseburia 等）减少，
+          导致肠腔丁酸不足；丁酸经 GPR43/GPR109A 受体与组蛋白去乙酰化酶抑制两条途径，
+          维持 Treg 诱导、Muc2 黏液屏障与 ILC3–IL-22–抗菌肽应答。上述供给不足时，
+          术后菌群重塑窗口期即成为肠炎的触发点。该失衡可在临床发病前由粪便菌群与代谢物捕获，
+          用于风险预测；补充丁酸或定植产丁酸菌可降低发生率。
+        </p>
+      </div>
+      <p>
+        HSCR 发病率约 1/5000 活产，根治术后 HAEC 发生率报道在 20%–45% 之间。现状有三个缺口：
+        <strong>其一</strong>，诊断依赖 2009 年 Delphi 共识的症状–体征–影像评分，本质是事后确认，没有预警工具；
+        <strong>其二</strong>，已知临床危险因素（长段型/全结肠型、21-三体、术前肠炎史、吻合口狭窄、诊断延迟）
+        单独建模的区分度多在 AUC 0.65–0.75，不足以支撑个体化随访；
+        <strong>其三</strong>，菌群失调（肠杆菌科富集、产丁酸菌与多样性下降、真菌过度生长）
+        已有多项描述性报道，但停留在组间差异，<strong>因果方向与可干预靶点均未明确</strong>。
+        本课题的定位就是把这三个缺口串起来：先做出能用的预测工具，再用组学找出标志物，最后用动物实验把因果坐实。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 04 研究内容 ============ -->
+  <section class="stage">
+    <div class="num">04</div>
+    <div class="body">
+      <h2>研究内容：三个相互衔接的研究内容</h2>
+      <p>
+        三部分不是并列的三个小课题，而是一条链：内容一先用临床变量做出可用的基线模型，
+        内容二用组学标志物去提升它并给出机制线索，内容三验证这条机制是否成立、能否被干预。
+      </p>
+      <div class="aims">
+
+        <div class="aim">
+          <div class="aim-head">
+            <div class="tag">研究内容一</div>
+            <h3>临床风险预测模型的构建与验证</h3>
+          </div>
+          <dl>
+            <dt>队列</dt>
+            <dd>回顾性纳入近 8–10 年行根治术的 HSCR 患儿，目标 <b>n ≈ 430</b>（预计 HAEC 事件 110–130 例）；
+              前瞻队列 <b>n ≈ 120</b> 作时间外部验证。</dd>
+            <dt>结局</dt>
+            <dd>术后 12 个月内首次 HAEC，采用 <b>Delphi 共识评分 ≥ 4 分</b>为诊断阈值；
+              双人独立盲评并计算 κ 一致性，分歧提交终点判定委员会裁定。</dd>
+            <dt>预测因子</dt>
+            <dd>候选变量控制在 <b>≤ 12 个</b>：病变肠段长度、术式、伴发畸形与 21-三体、术前肠炎次数、
+              手术月龄、术后首次排便时间、吻合口狭窄、术后抗生素暴露天数、喂养方式、
+              体重 Z 值、术前白蛋白、术后 CRP 峰值。</dd>
+            <dt>建模</dt>
+            <dd>LASSO 初筛 + 多因素 Cox（以死亡与再手术为竞争风险时改用 Fine–Gray），
+              10 折交叉验证评估区分度与校准度，输出<b>列线图</b>；
+              按 TRIPOD 规范报告。</dd>
+            <dt>产出</dt>
+            <dd>列线图 + 门诊可用的网页 / 小程序风险计算器（申请软件著作权），第一篇论文在第 12 个月前投出。</dd>
+          </dl>
+        </div>
+
+        <div class="aim">
+          <div class="aim-head">
+            <div class="tag">研究内容二</div>
+            <h3>多组学关联与标志物发现</h3>
+          </div>
+          <dl>
+            <dt>采样</dt>
+            <dd>前瞻入组 120 例，固定时点采集粪便与血清：<b>术前、术后 1 周、1 个月、3 个月、6 个月</b>，
+              发生 HAEC 时加采一次急性期样本。采样至 −80 ℃ 冻存控制在 2 小时内。</dd>
+            <dt>检测</dt>
+            <dd>全部样本行粪便 <b>16S rRNA V3–V4</b> 测序；按结局分层挑选 40–60 例加做宏基因组；
+              GC-MS 靶向测定粪便与血清短链脂肪酸，并行非靶向代谢组；
+              粪便钙卫蛋白与 sIgA；切除肠段及随访黏膜标本行 Muc2、Reg3γ、FOXP3/IL-17A
+              免疫组化与 qPCR；预留 10 例做黏膜单细胞测序。</dd>
+            <dt>分析</dt>
+            <dd>LEfSe 与 MaAsLin2 找差异菌属，构建菌群–代谢物–免疫指标三元相关网络；
+              关键一步是<b>中介分析</b>：检验"菌群改变 → 丁酸下降 → 免疫失衡 → HAEC"这条通路的中介效应。</dd>
+            <dt>融合</dt>
+            <dd>把入选标志物加入内容一的模型，比较 clinical 与 clinical + omics 两版的
+              AUC 增量、<b>NRI 与 IDI</b>，用决策曲线分析证明临床净收益，而不是只报 P 值。</dd>
+          </dl>
+        </div>
+
+        <div class="aim">
+          <div class="aim-head">
+            <div class="tag">研究内容三</div>
+            <h3>因果验证与干预（动物实验）</h3>
+          </div>
+          <dl>
+            <dt>模型</dt>
+            <dd>采用 <b>Ednrb<sup>s-l/s-l</sup>（piebald-lethal）</b>或 Ret 突变小鼠的自发性肠炎模型，
+              以野生同窝鼠为对照。</dd>
+            <dt>粪菌移植</dt>
+            <dd>将 HAEC 与非 HAEC 患儿粪便分别移植给抗生素预处理（或无菌）小鼠，
+              观察是否复现表型差异 —— 这是本课题把相关性推向因果的关键实验。</dd>
+            <dt>干预与拮抗</dt>
+            <dd>丁酸钠灌胃或产丁酸菌定植观察保护效应；再用 <b>Ffar2（GPR43）缺陷小鼠</b>
+              或 HDAC 抑制剂拮抗，验证保护作用是否依赖该通路。</dd>
+            <dt>读出</dt>
+            <dd>肠炎组织学评分与生存、杯状细胞与 Muc2、Treg/Th17 流式比例、Reg3γ 与紧密连接蛋白表达、
+              FITC-dextran 肠道通透性。</dd>
+            <dt>去向</dt>
+            <dd>机制链条闭环后，直接产出一份丁酸或益生菌预防 HAEC 的<b>随机对照试验方案</b>，
+              作为下一轮课题的申报基础。</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="subhead">创新点 — 只写三条，每条都要能打透</div>
+      <p>
+        <strong>一、</strong>把 HAEC 菌群研究从"描述组间差异"推进到<strong>中介分析加粪菌移植与通路拮抗的因果验证</strong>；
+        <strong>二、</strong>建立国内首个含<strong>术前至术后 6 个月时序生物样本</strong>的 HSCR 专病队列与样本库；
+        <strong>三、</strong>产出可直接用于门诊分层随访的<strong>预测工具</strong>，而非停留在统计学关联。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 05 样本量 ============ -->
+  <section class="stage">
+    <div class="num">05</div>
+    <div class="body">
+      <h2>样本量与统计效能</h2>
+      <p>
+        写标书时这一节最容易被"估计"糊过去，也最容易被评审挑出来。三部分分别算，并注明依据。
+      </p>
+      <div class="scroller">
+        <table class="figures">
+          <thead>
+            <tr>
+              <th>研究内容</th>
+              <th>依据</th>
+              <th class="num">参数</th>
+              <th class="num">所需样本</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>内容一 · 预测建模</td>
+              <td>每变量事件数 EPV ≥ 10，并用 Riley 等预测模型最小样本量法复核</td>
+              <td class="num">12 个候选变量<br>HAEC 累积发生率 28%</td>
+              <td class="num">≥ 120 事件<br><b>n ≈ 430</b></td>
+            </tr>
+            <tr>
+              <td>内容一 · 外部验证</td>
+              <td>验证集事件数 ≥ 100 为宜，本课题受周期限制取时间外部验证</td>
+              <td class="num">同上发生率</td>
+              <td class="num"><b>n ≈ 120</b></td>
+            </tr>
+            <tr>
+              <td>内容二 · 菌群差异</td>
+              <td>两独立样本 t 检验，以既往报道 Shannon 指数组间效应量估算</td>
+              <td class="num">Cohen's d ≈ 0.6<br>α = 0.05，power = 0.80</td>
+              <td class="num">每组 45 例<br><b>计 120 例</b>（含 20% 脱落与分层）</td>
+            </tr>
+            <tr>
+              <td>内容三 · 动物实验</td>
+              <td>方差分析，以肠炎组织学评分差异估算</td>
+              <td class="num">d ≈ 1.4<br>power &gt; 0.80</td>
+              <td class="num">每组 <b>8–10 只</b><br>共 6 组</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        注意一个现实问题：<strong>n ≈ 430 对单中心是有挑战的</strong>。按年手术量 40–60 例计算，
+        回顾 8–10 年病例可以覆盖，但资料完整度会随年份递减。
+        务必先做 20 例预提取试算缺失率，若关键变量缺失超过 20%，就要缩短回顾年限并同时启动 2–3 家协作单位。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 06 进度 ============ -->
+  <section class="stage">
+    <div class="num">06</div>
+    <div class="body">
+      <h2>36 个月进度安排</h2>
+      <p>
+        排期的原则是<strong>让回顾队列先出第一篇</strong>：第 12 个月前投出临床模型论文，
+        既给中期检查交差，也为后续组学与动物实验争取时间。前瞻入组横跨 27 个月，是整个课题的关键路径。
+      </p>
+      <div class="gantt-wrap">
+        <div class="gantt">
+          <div class="gantt-scale">
+            <span style="grid-column:1">月份</span>
+            <span style="grid-column:2">M1</span>
+            <span style="grid-column:8">M7</span>
+            <span style="grid-column:14">M13</span>
+            <span style="grid-column:20">M19</span>
+            <span style="grid-column:26">M25</span>
+            <span style="grid-column:32">M31</span>
+          </div>
+
+          <div class="gantt-row">
+            <div class="lbl">伦理审批 · CRF 与数据库 · 样本 SOP · ChiCTR 注册</div>
+            <div class="bar prep" style="grid-column:2 / span 3"><span>M1–3</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">回顾队列病例提取与数据质控</div>
+            <div class="bar clin" style="grid-column:2 / span 9"><span>M1–9</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">前瞻队列入组与时序采样随访</div>
+            <div class="bar clin" style="grid-column:5 / span 27"><span>M4–30 · 关键路径</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">内容一：建模与内部验证</div>
+            <div class="bar clin" style="grid-column:8 / span 6"><span>M7–12</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">16S / 宏基因组 / 代谢组检测与分析</div>
+            <div class="bar omic" style="grid-column:11 / span 15"><span>M10–24</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">病理免疫组化 · qPCR · 单细胞测序</div>
+            <div class="bar omic" style="grid-column:17 / span 10"><span>M16–25</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">内容三：动物模型 · 粪菌移植 · 干预与拮抗</div>
+            <div class="bar anim" style="grid-column:14 / span 18"><span>M13–30</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">模型融合与外部验证</div>
+            <div class="bar clin" style="grid-column:26 / span 9"><span>M25–33</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">论文 1：临床预测模型</div>
+            <div class="bar out" style="grid-column:11 / span 4"><span>M10–13 投稿</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">论文 2–3：组学融合模型 · 机制研究</div>
+            <div class="bar out" style="grid-column:28 / span 7"><span>M27–33 投稿</span></div>
+          </div>
+          <div class="gantt-row">
+            <div class="lbl">软著与专利 · 结题 · 下一轮 RCT 方案</div>
+            <div class="bar out" style="grid-column:32 / span 6"><span>M31–36</span></div>
+          </div>
+
+          <div class="legend">
+            <span><i class="bar prep" style="background:var(--ink-3)"></i>筹备与合规</span>
+            <span><i class="bar clin" style="background:var(--hema)"></i>临床队列与建模</span>
+            <span><i class="bar omic" style="background:var(--dab)"></i>多组学与病理</span>
+            <span><i class="bar anim" style="background:var(--good)"></i>动物实验</span>
+            <span><i style="border:1px dashed var(--ink-3);background:transparent;display:inline-block;width:20px;height:8px;border-radius:2px;margin-right:7px;vertical-align:1px"></i>成果产出</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 预算 ============ -->
+  <section class="stage">
+    <div class="num">07</div>
+    <div class="body">
+      <h2>经费预算</h2>
+      <p>
+        按直接费用 55 万元编制，对应国自然面上或省市级重点的常见额度。
+        若申报青年基金（约 30 万元），压缩方式是：宏基因组由 50 例减至 20 例、
+        取消单细胞测序、动物实验改为与合作实验室共担。
+      </p>
+      <div class="scroller">
+        <table class="figures">
+          <thead>
+            <tr>
+              <th>科目</th>
+              <th>主要内容与用量</th>
+              <th class="num">金额（万元）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>测序与组学检测</td>
+              <td>16S rRNA 约 480 样本 · 宏基因组 50 例 · 靶向 SCFA 与非靶向代谢组 480 样本</td>
+              <td class="num">22.0</td>
+            </tr>
+            <tr>
+              <td>动物实验</td>
+              <td>品系引进与繁育 · 无菌/SPF 饲养 · 流式抗体 · 粪菌移植耗材</td>
+              <td class="num">13.0</td>
+            </tr>
+            <tr>
+              <td>病理与免疫检测</td>
+              <td>免疫组化与 qPCR · 粪钙卫蛋白与 sIgA · 黏膜单细胞测序 10 例</td>
+              <td class="num">7.0</td>
+            </tr>
+            <tr>
+              <td>论文与知识产权</td>
+              <td>版面费 2–3 篇 · 语言润色 · 软著与专利申请</td>
+              <td class="num">4.0</td>
+            </tr>
+            <tr>
+              <td>随访与样本管理</td>
+              <td>采样盒与冷链 · 家庭随访交通补助 · 样本库耗材与冻存管</td>
+              <td class="num">3.0</td>
+            </tr>
+            <tr>
+              <td>数据处理劳务</td>
+              <td>生物信息分析 · 统计支持 · 风险计算器开发</td>
+              <td class="num">3.0</td>
+            </tr>
+            <tr>
+              <td>学术交流</td>
+              <td>国内外小儿外科年会 · 协作单位启动会</td>
+              <td class="num">3.0</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr><td>合计</td><td>直接费用</td><td class="num">55.0</td></tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 风险 ============ -->
+  <section class="stage">
+    <div class="num">08</div>
+    <div class="body">
+      <h2>可行性、风险与对策</h2>
+      <p>
+        标书里"可行性分析"最忌讳只写优势。把真实风险列出来并给出具体对策，反而是加分项。
+      </p>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>风险</th><th class="num">可能性</th><th>对策</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>前瞻入组不足，无法在 27 个月内凑齐 120 例</td>
+              <td class="num"><span class="cost-高">高</span></td>
+              <td>立项前即与 2–3 家协作单位签署协议并统一 SOP；同步放宽纳入至同期其他结肠手术作对照组；每季度核对入组曲线，落后 20% 即启动协作中心</td>
+            </tr>
+            <tr>
+              <td>HAEC 诊断异质性导致终点不可靠</td>
+              <td class="num"><span class="cost-高">高</span></td>
+              <td>统一使用 Delphi 共识评分，双人独立盲评并报告 κ 值；设立三人终点判定委员会裁定分歧病例；所有影像由固定放射科医师复核</td>
+            </tr>
+            <tr>
+              <td>回顾资料关键变量缺失率过高</td>
+              <td class="num"><span class="cost-中">中</span></td>
+              <td>先做 20 例预提取探底；缺失 &lt; 20% 用多重插补并做敏感性分析；超过则缩短回顾年限、减少候选变量</td>
+            </tr>
+            <tr>
+              <td>无菌鼠平台缺失，粪菌移植无法开展</td>
+              <td class="num"><span class="cost-中">中</span></td>
+              <td>改用抗生素预处理常规小鼠加隔离器饲养（已有成熟方案）；或与高校 / 国家级动物平台签订合作，把该部分外包</td>
+            </tr>
+            <tr>
+              <td>组学数据分析能力不足，结果止于差异菌柱状图</td>
+              <td class="num"><span class="cost-中">中</span></td>
+              <td>测序合同中写明中介分析与网络分析条款；团队内指定 1 人掌握 QIIME2 与 R 基础，保证能独立复现，不被公司报告牵着走</td>
+            </tr>
+            <tr>
+              <td>家长依从性差，时序粪便样本脱落</td>
+              <td class="num"><span class="cost-中">中</span></td>
+              <td>发放标准采样盒并教学；随访日发放交通补助；建立随访微信群与提前 3 天提醒；远地患儿安排冷链上门取样</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subhead">伦理与合规</div>
+      <p>
+        医院伦理委员会批准并取得监护人书面知情同意，同意书需单列<strong>生物样本二次利用与数据共享条款</strong>；
+        在 ChiCTR 注册（观察性研究亦建议注册）；报告规范上，队列研究遵循 STROBE、
+        预测模型遵循 TRIPOD、动物实验遵循 ARRIVE、后续随机对照试验遵循 CONSORT；
+        数据去标识化后专机存储并保留访问日志。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 09 方案 B ============ -->
+  <section class="stage">
+    <div class="num">09</div>
+    <div class="body">
+      <h2>备选方案：12–18 个月见成果的低成本路线</h2>
+      <p>
+        如果眼下平台或经费还不到位，建议先跑这个方案。它几乎只消耗人力，
+        并且<strong>建立的随访体系可以直接被主攻方案复用</strong> —— 两者共用一套随访队列，不是白做。
+      </p>
+      <div class="panel">
+        <h3>肛门直肠畸形与先天性巨结肠术后远期排便功能及生活质量的真实世界队列研究</h3>
+        <dl>
+          <dt>设计</dt>
+          <dd>回顾性队列 + 横断面随访问卷。以近 10 年手术且目前年龄 ≥ 4 岁的患儿为对象。</dd>
+          <dt>样本</dt>
+          <dd>目标 <b>n ≈ 200–300</b>，电话或门诊随访完成量表。</dd>
+          <dt>结局</dt>
+          <dd><b>Rintala 排便功能评分</b>、Krickenbeck 分类、PedsQL 4.0 生活质量量表、
+            Baylor 失禁量表；均为公认工具，无需自制问卷。</dd>
+          <dt>暴露</dt>
+          <dd>术式、病变类型与长度、手术月龄、并发症、骶骨比值、
+            以及<b>是否进入规范化肠管理</b>（这是本研究真正想回答的可改变因素）。</dd>
+          <dt>分析</dt>
+          <dd>多因素回归识别可改变的预后因素；按是否接受规范化肠管理做亚组比较与倾向性评分匹配。</dd>
+          <dt>成本</dt>
+          <dd>约 <b>3–5 万元</b>，主要为随访补助与人力。</dd>
+          <dt>产出</dt>
+          <dd>1–2 篇论著 + 本院术后随访路径与肠管理方案，可直接转化为科室质控指标。</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10 落地清单 ============ -->
+  <section class="stage">
+    <div class="num">10</div>
+    <div class="body">
+      <h2>下个月的落地清单</h2>
+      <p>
+        方案写得再完整，卡住的往往是前三件事。按顺序做，勾选状态保存在本机浏览器。
+      </p>
+      <ul class="check">
+        <li>
+          <input type="checkbox" id="t1">
+          <label for="t1"><b>导出近 10 年 HSCR / ARM 出院病例清单</b>，确认真实可用例数 —— 这一步决定课题成不成立，务必先做</label>
+        </li>
+        <li>
+          <input type="checkbox" id="t2">
+          <label for="t2"><b>做 20 例预提取</b>，实测关键变量缺失率，据此定回顾年限与候选变量个数</label>
+        </li>
+        <li>
+          <input type="checkbox" id="t3">
+          <label for="t3"><b>系统检索一遍文献</b>（PubMed + 万方/CNKI + ClinicalTrials + ChiCTR），确认没有被同行做完或正在做</label>
+        </li>
+        <li>
+          <input type="checkbox" id="t4">
+          <label for="t4"><b>定终点定义与 CRF</b>：Delphi 评分表电子化，写好双人盲评与仲裁流程</label>
+        </li>
+        <li>
+          <input type="checkbox" id="t5">
+          <label for="t5"><b>撰写伦理申请与知情同意书</b>，务必含生物样本二次利用与数据共享条款</label>
+        </li>
+        <li>
+          <input type="checkbox" id="t6">
+          <label for="t6"><b>制定生物样本 SOP</b>：采样盒规格、编码规则、采样至 −80 ℃ 冻存 &lt; 2 小时、交接记录表</label>
+        </li>
+        <li>
+          <input type="checkbox" id="t7">
+          <label for="t7"><b>落实三方合作</b>：2 家协作单位、1 家测序公司比价（三家报价）、1 个动物实验平台</label>
+        </li>
+        <li>
+          <input type="checkbox" id="t8">
+          <label for="t8"><b>组队</b>：1 名主治负责临床数据、1 名研究生负责样本与实验、1 名生信/统计固定支持</label>
+        </li>
+        <li>
+          <input type="checkbox" id="t9">
+          <label for="t9"><b>ChiCTR 注册</b>并预约统计师做一次样本量与分析计划的正式复核</label>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 11 踩坑 ============ -->
+  <section class="stage">
+    <div class="num">11</div>
+    <div class="body">
+      <h2>常见踩坑</h2>
+      <ul class="pit">
+        <li>
+          <div class="bad">例数靠"估计"写进标书，开题后发现凑不齐</div>
+          <div class="fix">先导出病例清单核实真实可用例数，再回头写样本量那一节</div>
+        </li>
+        <li>
+          <div class="bad">结局写成"恢复良好 / 一般 / 较差"</div>
+          <div class="fix">一律换成公认量表：Delphi HAEC 评分、Rintala BFS、Krickenbeck、PedsQL</div>
+        </li>
+        <li>
+          <div class="bad">创新点列五条，每条都浅</div>
+          <div class="fix">压到三条，其中至少一条是方法学或因果层面的真突破</div>
+        </li>
+        <li>
+          <div class="bad">组学做完只出一张差异菌属柱状图</div>
+          <div class="fix">必须往前走一步：中介分析、通路拮抗或粪菌移植，否则仍是相关性研究</div>
+        </li>
+        <li>
+          <div class="bad">模型只报 AUC，不报校准度与临床收益</div>
+          <div class="fix">补齐校准曲线、决策曲线分析与 NRI/IDI，并按 TRIPOD 逐条对照</div>
+        </li>
+        <li>
+          <div class="bad">纯临床或纯基础，单中心难以竞争</div>
+          <div class="fix">回到"临床队列 + 生物样本库 + 一个机制切入点"的三件套结构</div>
+        </li>
+        <li>
+          <div class="bad">样本采了但 SOP 不统一，后期检测批次效应无法校正</div>
+          <div class="fix">立项前把 SOP 固定成纸质表格贴在冰箱上，并预留批次内参样本</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="end">
+    <p>
+      本页为课题规划框架，其中发生率、效应量与预算均为按文献常见区间给出的<strong>规划用估计值</strong>，
+      正式申报前请以本中心实际病例数据与最新文献复核，并请统计专业人员正式核算样本量。
+    </p>
+    <p>如需把十个候选方向中的任意一个展开成同等深度的方案，或按青年基金额度重排预算与进度，告诉我即可。</p>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var KEY = "pgi-plan-checklist";
+    var boxes = document.querySelectorAll('ul.check input[type="checkbox"]');
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { saved = {}; }
+    boxes.forEach(function(box){
+      if (saved[box.id]) { box.checked = true; }
+      box.addEventListener("change", function(){
+        var state = {};
+        boxes.forEach(function(b){ if (b.checked) { state[b.id] = 1; } });
+        try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      });
+    });
+  })();
+</script>
